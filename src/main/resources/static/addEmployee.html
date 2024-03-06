@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить работника</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/addEmployee.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Добавить работника</h1>
+<form id="addEmployeeForm">
+    <label for="iinInput">ИИН:</label>
+    <input type="text" id="iinInput" name="iin" required><br>
+    <span id="iinError" style="color: red; display: none;">Поле обязательно для заполнения</span><br>
+
+    <label for="firstNameInput">Имя:</label>
+    <input type="text" id="firstNameInput" name="firstName" required><br>
+    <span id="firstNameError" style="color: red; display: none;">Поле обязательно для заполнения</span><br>
+
+    <label for="secondNameInput">Фамилия:</label>
+    <input type="text" id="secondNameInput" name="secondName" required><br>
+    <span id="secondNameError" style="color: red; display: none;">Поле обязательно для заполнения</span><br>
+
+    <label for="patronymicInput">Отчество:</label>
+    <input type="text" id="patronymicInput" name="patronymic"><br>
+
+    <label for="phoneInput">Телефон:</label>
+    <input type="tel" id="phoneInput" name="phone" required><br>
+    <span id="phoneError" style="color: red; display: none;">Поле обязательно для заполнения</span><br>
+
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" name="email" required><br>
+    <span id="emailError" style="color: red; display: none;">Поле обязательно для заполнения</span><br>
+
+    <label for="countryInput">Страна:</label>
+    <select id="countryInput" name="country" required>
+        <option value="Казахстан">Казахстан</option>
+        <option value="Россия">Россия</option>
+        <option value="США">США</option>
+    </select><br>
+
+    <label for="cityInput">Город:</label>
+    <select id="cityInput" name="city" required>
+    </select><br>
+
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>
