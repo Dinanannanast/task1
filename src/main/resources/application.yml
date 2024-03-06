@@ -1,0 +1,74 @@
+server:
+  port: 8080
+
+debug: true
+
+spring:
+  liquibase:
+    enabled: true
+    drop-first: false
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: myuser
+    password: secret
+  application:
+    name: test1
+  main:
+    banner-mode: console
+  banner:
+    location: classpath:banner.txt
+  jackson:
+    mapper:
+      accept-case-insensitive-properties: true
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    sessions:
+      enabled: false
+    env:
+      enabled: false
+    auditevents:
+      enabled: false
+    beans:
+      enabled: true
+    loggers:
+      enabled: true
+    liquibase:
+      enabled: false
+
+logging:
+  config: classpath:logback.xml
+  level:
+    root: error
+    web: debug
+    com.task.task1: debug
+    org.springframework: info
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.cache.*: debug
+    org.hibernate.stat.*: debug
+    org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: debug
+    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: info
+    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: info
+    liquibase: debug
+    liquibase.util.MD5Util: info
+
+spring.devtools:
+  add-properties: true
+  livereload:
+    enabled: true
+  restart:
+    enabled: true
+
+spring.jackson.serialization:
+  write-dates-as-timestamps: true
+  write-durations-as-timestamps: true
