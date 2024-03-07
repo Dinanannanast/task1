@@ -11,8 +11,9 @@ spring:
     password: ${spring.datasource.password}
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: myuser
-    password: secret
+    url: jdbc:postgresql://localhost:5432/vtask1
+    username: postgres
+    password: postgres
   application:
     name: test1
   main:

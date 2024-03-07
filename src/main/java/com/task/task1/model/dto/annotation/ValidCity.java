@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { })
-@Pattern(regexp = "^$|^[а-яА-ЯёЁa-zA-Z\\s]+$", message = "Invalid city name")
+@Pattern(regexp = "^$|^[а-яА-ЯёЁa-zA-Z\\s-]+$", message = "Invalid city name")
 public @interface ValidCity {
     String message() default "Invalid city name";
     Class<?>[] groups() default { };
